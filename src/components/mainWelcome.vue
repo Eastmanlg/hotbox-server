@@ -15,8 +15,8 @@ v-container.fill-height
                     | Start Roasting
             v-col(cols="auto")
                 v-btn(href="https://community.vuetifyjs.com/" min-width="164" rel="noopener noreferrer" target="_blank" variant="text")
-                    v-icon(icon="mdi-account-group" size="large" start="")
-                    | Community
+                    v-icon(icon="mdi-developer-board" size="large" start="")
+                    | Debugger
 </template>
 
 <script setup>
