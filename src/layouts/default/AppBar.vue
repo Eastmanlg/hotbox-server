@@ -1,9 +1,9 @@
 <template>
   <v-app-bar flat>
     <v-app-bar-title>
-      <v-icon icon="mdi-circle-slice-6" />
+      <v-icon icon="mdi-coffee-to-go-outline" />
 
-      Essentials Preset
+      Roamsteader Coffee
     </v-app-bar-title>
   </v-app-bar>
 </template>
