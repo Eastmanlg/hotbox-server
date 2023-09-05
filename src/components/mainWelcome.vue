@@ -14,11 +14,12 @@ v-container.fill-height
                     v-icon(icon="mdi-radiator" size="large" start="")
                     | Start Roasting
             v-col(cols="auto")
-                v-btn(href="https://community.vuetifyjs.com/" min-width="164" rel="noopener noreferrer" target="_blank" variant="text")
+                v-btn(to='/debugger' color="secondary" min-width="228" size="x-large" variant="text")
                     v-icon(icon="mdi-developer-board" size="large" start="")
                     | Debugger
 </template>
 
 <script setup>
-  //
+    //
 </script>
+
