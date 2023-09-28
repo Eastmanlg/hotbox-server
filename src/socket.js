@@ -7,7 +7,7 @@ const state = reactive({
     barEvents: []
 });
 
-const URL = 'http://localhost:3000';
+const URL = 'http://hotbox:3000';
 export const socket = io(URL);
 
 socket.on('connect', () => {
