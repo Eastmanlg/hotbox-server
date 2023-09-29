@@ -497,6 +497,13 @@ binary-extensions@^2.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
+bindings@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/bindings/-/bindings-1.5.0.tgz#10353c9e945334bc0511a6d90b38fbc7c9c504df"
+  integrity sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==
+  dependencies:
+    file-uri-to-path "1.0.0"
+
 body-parser@1.20.1:
   version "1.20.1"
   resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.20.1.tgz#b1812a8912c195cd371a3ee5e66faa2338a5c668"
@@ -1050,6 +1057,11 @@ file-entry-cache@^6.0.1:
   dependencies:
     flat-cache "^3.0.4"
 
+file-uri-to-path@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/file-uri-to-path/-/file-uri-to-path-1.0.0.tgz#553a7b8446ff6f684359c445f1e37a05dacc33dd"
+  integrity sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==
+
 filelist@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/filelist/-/filelist-1.0.4.tgz#f78978a1e944775ff9e62e744424f215e58352b5"
@@ -1464,6 +1476,13 @@ make-dir@^3.0.2:
   dependencies:
     semver "^6.0.0"
 
+max31865@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/max31865/-/max31865-1.0.3.tgz#20814f877a36d28e54be7b6ef93fadb217ac2bc0"
+  integrity sha512-T0UIxmH3nyrK2RfDIsSpf6pk1JR5ZqThsVgxO1fgOStJW2iuugYwSU2uejFME+VZUUOypAnqVMzh3aLUx9db8g==
+  dependencies:
+    spi-device "^3.0.0"
+
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
@@ -1524,6 +1543,11 @@ ms@2.1.3, ms@^2.1.1:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
+
+nan@^2.14.2:
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.18.0.tgz#26a6faae7ffbeb293a39660e88a76b82e30b7554"
+  integrity sha512-W7tfG7vMOGtD30sHoZSSc/JVYiyDPEyQVso/Zz+/uQd0B0L46gtC+pHha5FFMRpil6fm/AoEcRWyOVi4+E/f8w==
 
 nanoid@^3.3.6:
   version "3.3.6"
@@ -1690,6 +1714,14 @@ picomatch@^2.0.4, picomatch@^2.2.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
+
+pigpio@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/pigpio/-/pigpio-3.3.1.tgz#fc31885ea2bfb335cccb80b9d78b443fcfe56b90"
+  integrity sha512-z7J55K14IwWkA+oW5JHzWcgwThFAuJ7IzV3A2//yRm4jJ2DTU0DHIy91DB0siOi12rvvlrIhRetEuAo0ztF/vQ==
+  dependencies:
+    bindings "^1.5.0"
+    nan "^2.14.2"
 
 pinia@^2.0.0:
   version "2.1.6"
@@ -2097,6 +2129,14 @@ spawn-command@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/spawn-command/-/spawn-command-0.0.2.tgz#9544e1a43ca045f8531aac1a48cb29bdae62338e"
   integrity sha512-zC8zGoGkmc8J9ndvml8Xksr1Amk9qBujgbF0JAIWO7kXr43w0h/0GJNM/Vustixu+YE8N/MTrQ7N31FvHUACxQ==
+
+spi-device@^3.0.0:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/spi-device/-/spi-device-3.1.2.tgz#ba0f4b79638e8cb9a64840fe38176666cffb482e"
+  integrity sha512-5ubnDcpFjMAiO32j7Jrg/EMSmnInoh9LFzh/abVSJxTjCbmUQdRDVgNG5mRlOpMZc+SCHNSzqKVHGe8n0mVKwA==
+  dependencies:
+    bindings "^1.5.0"
+    nan "^2.14.2"
 
 statuses@2.0.1:
   version "2.0.1"
