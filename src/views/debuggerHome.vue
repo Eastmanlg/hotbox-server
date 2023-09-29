@@ -4,9 +4,9 @@ v-container.fill-height
         v-row.my-2
             v-col
                 debuggerConnection
-        v-row.my-2
-            v-col 
-                debuggerGraph
+        //- v-row.my-2
+        //-     v-col 
+        //-         debuggerGraph
 
 </template>
 

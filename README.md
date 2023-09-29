@@ -16,7 +16,7 @@ pnpm install
 ### Compiles and hot-reloads for development
 
 ```
-# yarn
+# yarny
 yarn dev
 
 # npm
