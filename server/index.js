@@ -11,7 +11,7 @@ const app = express();
 const pinLight = 17;
 const pinDrum = 27;
 const pinHeat = 22;
-const pinHeatPWM = 21;
+const pinHeatPWM = 0;
 
 //Init pins
 const Light = new Gpio(pinLight, {mode: Gpio.OUTPUT});
@@ -60,6 +60,7 @@ io.on('connection', (socket) => {
             .then((tempC) => {
                 const tempF = (tempC * 9.0/5.0) + 32;
                 console.log(tempF);
+                socket.emit('debug-updateTemp', tempF);
             });
         } catch(e) {
             console.error(e.message);
@@ -99,6 +100,7 @@ io.on('connection', (socket) => {
     socket.on('debug-heatPWMOn', (dutyCycle) => {
         HeatPWM.pwmWrite(dutyCycle);
         console.log(`Wrote ${dutyCycle} to HeatPWM`);
+        // HeatPWM.digitalWrite(1);
     });
 });
   
