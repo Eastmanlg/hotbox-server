@@ -2,7 +2,7 @@
 v-container.fill-height
     v-responsive.align-center.text-center.fill-height
         v-img(height="300" src="@/assets/logo.svg")
-        span.text-body-2.font-weight-light.mb-n1 Welcome to
+        span.text-body-2.font-weight-light.mb-n1 Welcome to the
         h1.pb-10.text-h2.font-weight-bold Hotbox
         v-row.d-flex.align-center.justify-center
             v-col(cols="auto")

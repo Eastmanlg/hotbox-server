@@ -1,31 +1,31 @@
 <template lang="pug">
 v-card
-    v-card-title Controller Connection
+    v-card-title IO Checks
     v-card-text
-        span(v-if='ready') Ready 
-        span(v-else) Not Ready 
+        v-container(fluid)
+            v-row   
+                v-col
+                    debugLight
+                v-col
+                    debugDrum
+                v-col 
+                    debugHeat
+                v-col
+                    debugTemp
+            v-row
+                v-col(cols='6')
+                    debugHeatPWM
     v-card-actions 
-        v-btn(@click='on()') On   
-        v-btn(@click='blink()') Blink
-        v-btn(@click='off()') Off
 </template>
 
 <script setup>
 import { socket } from '@/socket';
+import debugLight from './debug/debugLight.vue';
+import debugDrum from './debug/debugDrum.vue';
+import debugHeat from './debug/debugHeat.vue';
+import debugHeatPWM from './debug/debugHeatPWM.vue';
+import debugTemp from './debug/debugTemp.vue';
 
-let ready = false;
-let hotbox;
-
-function on() {
-    socket.emit('on');
-}
-function blink() {
-    socket.emit('blink', 1000);
-}
-
-function off() {
-    socket.emit('off')
-}
 
 </script>
 
