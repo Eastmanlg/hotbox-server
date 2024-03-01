@@ -19,7 +19,11 @@ const Drum = new Gpio(pinDrum, {mode: Gpio.OUTPUT});
 const Heat = new Gpio(pinHeat, {mode: Gpio.OUTPUT});
 const HeatPWM = new Gpio(pinHeatPWM, {mode: Gpio.OUTPUT});
 
+
 //Init temp probe
+let tempPoll;
+const tempPollInterval = 1000;
+let tempLastValue = 0;
 const tempProbe = new MAX31865(0,0, {
     rtdNominal: 100,
     refResistor: 430,
@@ -45,27 +49,31 @@ const io = new Server(serverInstance, {
     }
 });
 
-
-io.on('connection', (socket) => {
-    console.log('Browser connected');
-    socket.on('disconnect', () => {
-        console.log('Browser disconnected');
-    });
-
-
-    //Socket listeners
-    socket.on('debug-getTemp', () => {
+function readTempContinuously() {
+    tempPoll = setInterval(() => {
         try {
             tempProbe.getTemperature()
             .then((tempC) => {
-                const tempF = (tempC * 9.0/5.0) + 32;
+                const tempF = ((tempC * 9.0/5.0) + 32).toFixed(1);
                 console.log(tempF);
-                socket.emit('debug-updateTemp', tempF);
+                io.emit('temperature-updated', tempF);
             });
         } catch(e) {
             console.error(e.message);
         }
+      }, tempPollInterval); // Adjust the polling interval as needed
+}
+
+io.on('connection', (socket) => {
+    console.log('Browser connected');
+    //Start temperature reading
+    readTempContinuously();
+
+    socket.on('disconnect', () => {
+        console.log('Browser disconnected');
+        clearInterval(tempPoll);
     });
+
 
     // Debugger Listeners
     socket.on('debug-lightOff', () => {

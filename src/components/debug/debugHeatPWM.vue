@@ -7,25 +7,33 @@ v-card(elevation="11")
                 v-col(cols='6')
                     v-btn(@click="off()", prepend-icon='mdi-lightbulb-off', variant="text") Off
                 v-col(cols='6')
-                    v-slider(v-model="dutyCycle", :min='0', :max='255', :step='1')
-                    v-btn(@click="PWMSend(dutyCycle)", prepend-icon='mdi-lightbulb-on', color="secondary", variant="text") Send
+                    v-slider(v-model='dutyCycle', min='0', max='255', step='1', thumb-label)
+                    span {{ dutyCycle }}
     v-card-actions 
+                    v-btn(@click="PWMSend(dutyCycle)", prepend-icon='mdi-lightbulb-on', color="secondary", variant="text") Send
 </template>
 
 <script>
 import { socket } from '@/socket';
-import { ref } from 'vue';
 
 
-let dutyCycle = ref(0);
+export default {
+    data: () => ({
+        dutyCycle: 0,
+    }),
+    computed: {
 
-function PWMSend(dc) {
-    dutyCycle = dc;
-    socket.emit('debug-heatPWMOn', dc);
-}
+    },
+    methods: {
+        PWMSend(dc) {
+            this.dutyCycle = dc;
+            socket.emit('debug-heatPWMOn', dc);
+        },
+        off() {
+            socket.emit('debug-heatPWMOff');
+        }
+    }
 
-function off() {
-    socket.emit('debug-heatPWMOff');
 }
 </script>
 

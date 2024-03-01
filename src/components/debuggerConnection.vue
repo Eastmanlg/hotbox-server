@@ -3,6 +3,9 @@ v-card
     v-card-title IO Checks
     v-card-text
         v-container(fluid)
+            v-row 
+                v-col
+                    debugTemp
             v-row   
                 v-col
                     debugLight
@@ -10,8 +13,7 @@ v-card
                     debugDrum
                 v-col 
                     debugHeat
-                v-col
-                    debugTemp
+                
             v-row
                 v-col(cols='6')
                     debugHeatPWM
